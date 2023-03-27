@@ -16,8 +16,16 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
+<<<<<<< HEAD
     print('Hi! Do you want to explore some US bikeshare data? Let\'s go!')
     # input for city (chicago, new york city, washington)
+||||||| merged common ancestors
+    print('Hello! Let\'s explore some US bikeshare data!')
+    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+=======
+    print('Hello! Let\'s explore some US bikeshare data!')
+    # get user input for city (chicago, new york city, washington). Use a while loop to handle invalid inputs
+>>>>>>> documentation
     while True:
         city = input("Do you want to see the data of Chicago, New York City or Washington?: ")
         if city.lower() in CITY_DATA:
@@ -75,15 +83,33 @@ def time_stats(df, city):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
+<<<<<<< HEAD
     # most common month
+||||||| merged common ancestors
+    # TO DO: display the most common month
+=======
+    # display the most common month
+>>>>>>> documentation
     common_month = df['month'].mode()[0]
     print('Most Common Month:', common_month)
 
+<<<<<<< HEAD
     # most common day of week
+||||||| merged common ancestors
+    #TO DO: display the most common day of week
+=======
+    #display the most common day of week
+>>>>>>> documentation
     common_day = df['day_of_week'].mode()[0]
     print('Most Common Day of Week:', common_day)
 
+<<<<<<< HEAD
     # most common start hour
+||||||| merged common ancestors
+    #TO DO: display the most common start hour
+=======
+    #display the most common start hour
+>>>>>>> documentation
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['hour'] = df['Start Time'].dt.hour
     common_hour = df['hour'].mode()[0]
@@ -99,15 +125,33 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
+<<<<<<< HEAD
     # most commonly used start station
+||||||| merged common ancestors
+    # TO DO: display most commonly used start station
+=======
+    #display most commonly used start station
+>>>>>>> documentation
     common_start_station = df["Start Station"].mode()[0]
     print('Most Commonly Used Start Station:', common_start_station)
 
+<<<<<<< HEAD
     # most commonly used end station
+||||||| merged common ancestors
+    # TO DO: display most commonly used end station
+=======
+    #display most commonly used end station
+>>>>>>> documentation
     common_end_station = df["End Station"].mode()[0]
     print('Most Commonly Used End Station:', common_end_station)
 
+<<<<<<< HEAD
     # most frequent combination of start station and end station trip
+||||||| merged common ancestors
+    # TO DO: display most frequent combination of start station and end station trip
+=======
+    #display most frequent combination of start station and end station trip
+>>>>>>> documentation
     comb_start_end = df.groupby(["Start Station", "End Station"]).size().idxmax()
     print('Most Frequent Combination of Start Station and End Station:', comb_start_end)
 
@@ -138,16 +182,34 @@ def user_stats(df, city):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
+<<<<<<< HEAD
     # counts of user types
+||||||| merged common ancestors
+    # TO DO: Display counts of user types
+=======
+    #Display counts of user types
+>>>>>>> documentation
     print(df["User Type"].value_counts())
 
+<<<<<<< HEAD
     # counts of gender
+||||||| merged common ancestors
+    # TO DO: Display counts of gender
+=======
+    #Display counts of gender
+>>>>>>> documentation
     if "Gender" in df.columns:
       print(df["Gender"].value_counts())
     else:
       print("Gender data is not available for the selected city and time period.")
 
+<<<<<<< HEAD
     # earliest, most recent, and most common year of birth
+||||||| merged common ancestors
+    # TO DO: Display earliest, most recent, and most common year of birth
+=======
+    #Display earliest, most recent, and most common year of birth
+>>>>>>> documentation
 
     if 'Birth Year' in df.columns:
       birth_year = df["Birth Year"].dropna(axis=0)
